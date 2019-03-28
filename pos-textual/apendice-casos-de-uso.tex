@@ -1,0 +1,209 @@
+\chapter{Especificação de Casos de Uso} \label{apendice:a}
+
+% ----------------------------------------------------------
+% Caso de Uso 01
+% ----------------------------------------------------------
+\section*{Especificação do Caso de Uso 01 --- LOGIN}
+\subsection*{Descrição}
+O usuário fará login na aplicação através de suas credenciais do próprio aplicativo ou através Facebook
+
+\subsection*{Ator}
+Usuário.
+
+\subsection*{Pré-condições}
+Não se aplica.
+
+\subsubsection*{Fluxo principal}
+\begin{lista}
+	\item O usuário acessa a tela inicial da aplicação e clica no botão de Entrar pelo aplicativo ou através do Facebook; 
+	\item O sistema utiliza as credenciais do usuário para ter acesso ao aplicativo. Caso o login seja feito através do facebook aplicação inicia um fluxo alternativo FA01, caso contrario a aplicação finaliza a tela atual e abre a próxima tela, tela principal do sistema.
+\end{lista}
+
+\subsubsection*{Fluxos alternativos}
+\begin{lista}
+	\item \textbf{FA01}
+	\begin{lista}
+		\item O usuário acessa a tela inicial e clica no botão de Entrar pelo aplicativo ou através do Facebook;
+		\item A aplicação exibe a caixa de dialogo de confirmação da rede social;
+		\item O usuário confirma e autoriza a utilização de seu perfil;
+		\item Encerra-se este caso de uso.		
+	\end{lista}
+\end{lista}
+
+\subsubsection*{Fluxo de exceção}
+\begin{lista}
+	\item \textbf{FE01}
+	\begin{lista}
+		\item Este fluxo se inicia quando não existe conexão com a internet;
+		\item A aplicação exibe uma mensagem “Erro – verifique sua conexão com a internet”.
+	\end{lista}
+\end{lista}
+
+\subsubsection*{Pós-condições}
+A aplicação deve guardar a seção do usuário atual.
+\pagebreak
+
+
+% ----------------------------------------------------------
+% Caso de Uso 02
+% ----------------------------------------------------------
+\section*{Especificação do Caso de Uso 02 --- PUBLICAR RECEITA}
+\subsection*{Descrição}
+O usuário irá criar uma receita, informando o nome, imagem, categoria, tempo de preparo e cozimento, dificuldade, porções, ingredientes necessários e modo de preparo.
+
+\subsection*{Ator}
+Qualquer usuário cadastrado e autenticado.
+
+\subsection*{Pré-condições}
+O usuário deve estar logado na aplicação.
+
+\subsubsection*{Fluxo principal}
+\begin{lista}
+	\item O usuário clica na opção de enviar receita no menu principal;
+	\item A aplicação abre uma nova tela “Enviar receita”;
+	\item  O usuário deve clicar no ícone de adicionar uma imagem o sistema abre uma tela para o usuário tirar uma foto ou escolher uma imagem;
+	\item  O usuário deve informar os dados necessários para publicar a receita;
+	\item  O usuário clica no botão “Compartilhar receita”;
+	\item  Caso o usuário tenha preenchido todos os campos aplicação retorna a tela principal do sistema, caso contrário é lançado no fluxo de exceção FE01.	
+\end{lista}
+
+\subsubsection*{Fluxo de exceção}
+
+\begin{lista}
+	\item \textbf{FE01}
+	\begin{lista}
+		\item Este fluxo se inicia quando o usuário clica em compartilhar e todos os campos não foram preenchidos;
+		\item A aplicação exibe uma mensagem informando quais campos ainda precisam ser preenchidos.
+	\end{lista}
+\end{lista}
+
+\subsubsection*{Pós-condições}
+Ao concluir a publicação da receita, a mesma é salva na base de dados e passar a estar disponível para todos os usuários. 
+
+\pagebreak
+
+
+% ----------------------------------------------------------
+% Caso de Uso 03
+% ----------------------------------------------------------
+\section*{Especificação do Caso de Uso 03 --- VISUALIZAR RECEITA}
+\subsection*{Descrição}
+O usuário irá visualizar suas receitas e cadastradas por outros usuários 
+
+\subsection*{Ator}
+Qualquer usuário cadastrado e autenticado.
+
+\subsection*{Pré-condições}
+O usuário deve estar autenticado na aplicação. 
+
+\subsubsection*{Fluxo principal}
+\begin{lista}
+	\item O usuário visualiza suas receitas e a de outros usuários, logo após o caso de uso Login.
+
+\end{lista}
+
+\subsubsection*{Fluxo de exceção}
+\begin{lista}
+	\item \textbf{FE01}
+	\begin{lista}
+		\item Este fluxo se inicia quando não existe conexão com a internet;
+		\item A aplicação exibe uma mensagem “Erro – verifique sua conexão com a internet”.
+	\end{lista}
+\end{lista}
+\pagebreak
+
+
+% ----------------------------------------------------------
+% Caso de Uso 04
+% ----------------------------------------------------------
+\section*{Especificação do Caso de Uso 04 --- CURTIR RECEITA}
+\subsection*{Descrição}
+O usuário irá curtir uma publicação clicando no ícone de “Curtir”.
+
+\subsection*{Ator}
+Qualquer usuário cadastrado e autenticado.
+
+\subsection*{Pré-condições}
+O usuário deve estar autenticado na aplicação. 
+
+\subsubsection*{Fluxo principal}
+\begin{lista}
+	\item Este caso de uso se inicia quando o usuário, na Tela de principal ou na tela de uma receita, clica no ícone de “Curtir”; 
+	\item A aplicação muda o ícone do botão “Curtir” e computa mais 1 ao valor de curtidas da receita.	
+\end{lista}
+\pagebreak
+
+
+% ----------------------------------------------------------
+% Caso de Uso 05
+% ----------------------------------------------------------
+\section*{Especificação do Caso de Uso 05 --- COMENTAR RECEITA}
+\subsection*{Descrição}
+O usuário irá comentar uma receita clicando no ícone de “Comentar” e escrever seu comentário.
+
+\subsection*{Ator}
+Qualquer usuário cadastrado e autenticado.
+
+\subsection*{Pré-condições}
+O usuário deve estar autenticado na aplicação. 
+
+\subsubsection*{Fluxo principal}
+\begin{lista}
+	\item Este caso de uso se inicia quando o usuário, na Tela de principal ou na tela de uma receita, clica no ícone de “Comentário”;
+	\item A aplicação abre uma nova tela onde o usuário poderá escrever o seu comentário;
+	\item Após escrever, o usuário clica no botão enviar.
+\end{lista}
+\pagebreak
+
+
+% ----------------------------------------------------------
+% Caso de Uso 06
+% ----------------------------------------------------------
+\section*{Especificação do Caso de Uso 06 --- FAVORITAR RECEITA}
+\subsection*{Descrição}
+O usuário irá favoritar uma receita clicando no ícone de “Favoritar”.
+
+\subsection*{Ator}
+Qualquer usuário cadastrado e autenticado.
+
+\subsection*{Pré-condições}
+O usuário deve estar autenticado na aplicação. 
+
+\subsubsection*{Fluxo principal}
+\begin{lista}
+	\item Este caso de uso se inicia quando o usuário, na Tela de principal ou na tela de uma receita, clica no ícone de “Favoritar”;
+    \item A aplicação muda o ícone do botão “Favoritar” e computa mais 1 ao valor de favoritadas da receita.
+\end{lista}
+\pagebreak
+
+
+% ----------------------------------------------------------
+% Caso de Uso 07
+% ----------------------------------------------------------
+\section*{Especificação do Caso de Uso 07 --- SEGUIR USUÁRIOS}
+\subsection*{Descrição}
+O usuário irá decidir quem seguir.
+
+\subsection*{Ator}
+Qualquer usuário cadastrado e autenticado.
+
+\subsection*{Pré-condições}
+O usuário deve estar autenticado na aplicação. 
+
+\subsubsection*{Fluxo principal}
+\begin{lista}
+	\item Este caso de uso se inicia quando o usuário, na Tela de Perfil de outro usuário, escolhe a opção “seguir”;
+	\item O usuário poderá clicar no botão “Seguir”;
+	\item A aplicação mudará o botão “Seguir” para “Seguindo”, e o usuário passará a seguir o amigo selecionado.
+\end{lista}
+
+\subsubsection*{Fluxos alternativos}
+\begin{lista}
+	\item \textbf{FA01}
+	\begin{lista}
+		\item  Este fluxo se inicia quando o usuário já está seguindo o outro, e o botão é “Seguindo”;
+		\item  O usuário poderá clicar no botão “Seguindo;
+		\item  A aplicação mudará o botão “Seguindo” para “Seguir”, e o usuário deixará de seguir o usuário selecionado.
+	\end{lista}
+\end{lista}
+\pagebreak
